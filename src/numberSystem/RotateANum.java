@@ -5,12 +5,13 @@ import java.util.Scanner;
 public class RotateANum {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int k = scn.nextInt();
+//        int n = scn.nextInt();
+//        int k = scn.nextInt();
 
 
 //        System.out.println(rotate(n, k));
-        System.out.println(rotateV2(n, k));
+//        System.out.println(rotateV2(n, k));
+        System.out.println(rotateV2(562984, -2));
     }
 
     static int rotate(int n, int k){

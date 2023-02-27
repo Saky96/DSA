@@ -15,11 +15,12 @@ import java.util.*;
 
 public class InverseOfNum {
     public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int num = scn.nextInt();
-
-        int result = findInverse(num);
-        System.out.println(result);
+//        Scanner scn = new Scanner(System.in);
+//        int num = scn.nextInt();
+//
+//        int result = findInverse(num);
+//        System.out.println(result);
+        System.out.println(findInverse2(28346751));
     }
 
 
@@ -36,6 +37,23 @@ public class InverseOfNum {
             op++;
         }
         return result;
+    }
+
+    public static int findInverse2(int n) {
+//        Scanner scn = new Scanner(System.in);
+//        int n = scn.nextInt();
+
+        int inverted = 0;
+        int power = 1;
+
+        while (n > 0) {
+            int digit = n % 10;
+            n = n / 10;
+            inverted += power * Math.pow(10, digit - 1);
+            power++;
+        }
+        System.out.println(inverted);
+        return inverted;
     }
 
 }

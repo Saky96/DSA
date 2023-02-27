@@ -14,29 +14,54 @@ public class AnyBaseSubtraction {
     }
 
     private static int getDifference(int b, int n1, int n2) {
-        int result = 0;
-        int p = 0;
-        int carry = 0;
-        while(n1!=0 || n2!=0){
+//        int result = 0;
+//        int p = 1;
+//        int carry = 0;
+//        while(n2>0){
+//
+//            int d1 = n1 % 10;
+//            int d2 = n2 % 10 + carry;
+//
+//            n1 = n1 / 10;
+//            n2 = (n2 /10);
+//
+//            int d = d2 - d1 - carry;
+//
+//            if(d<0){
+//                 carry = 1;
+//                 d += b;
+//            }
+//            else {
+//                carry = 0;
+//            }
+//
+//            result = result + d * (int) Math.pow(10, p);
+//            p++;
+//        }
+//        return result;
 
+        int rv = 0;
+
+        int c = 0;
+        int p = 1;
+        while (n2 > 0) {
             int d1 = n1 % 10;
-            int d2 = n2 % 10 + carry;
-
-            if(d2<d1){
-                 d2 = d2 + b;
-                 carry = -1;
-            }
-            else {
-                carry = 0;
-            }
-
-            n2 = (n2 /10);
+            int d2 = n2 % 10;
             n1 = n1 / 10;
+            n2 = n2 / 10;
 
-            int sub = d2 - d1;
-            result = result + sub * (int) Math.pow(10, p);
-            p++;
+            int d = d2 - d1 - c;
+
+            if (d < 0) {
+                c = 1;
+                d += b;
+            } else {
+                c = 0;
+            }
+
+            rv += d * p;
+            p = p * 10;
         }
-        return result;
+        return rv;
     }
 }

@@ -53,6 +53,8 @@ public class NextSmallerElementToRight {
 
         return ans;
     }
+
+    //here stack carries indices of the next smaller element to the right
     public static int[] solveIndex(int[] arr){
         int len = arr.length;
         int[] ans = new int[len];
